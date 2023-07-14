@@ -1,7 +1,7 @@
 import Like_dislike_thumb from "./like_dislike_thumb.js"
 import Fetch from"./fetch.js"
 import App from "./page.js"
-const Movie_row = ({ name1, discription, url, key, onDelete, data1,onLikedislike}) => {
+const Movie_row = ({ name1, discription, url, key, onDelete, data1,handleLike, handleDislike, likes,  dislikes}) => {
     return(
         <div className="movie_box">
             <div className="image_row"><img src={url}/></div>
@@ -15,9 +15,10 @@ const Movie_row = ({ name1, discription, url, key, onDelete, data1,onLikedislike
                 <Like_dislike_thumb
                     onclick={onDelete}
                     datas={data1}
-                    onLikedislike={onLikedislike}
-                   
-         
+                    handleLike={handleLike}
+                    handleDislike={handleDislike}
+                    likes={likes}
+                    dislikes={dislikes}
                 />
              </div>
              </div>
