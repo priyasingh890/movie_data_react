@@ -1,5 +1,5 @@
 
-export const people = [{
+export const movie_data = [{
   id: 1,
   likes:0,
   dislikes:0,

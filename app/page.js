@@ -1,13 +1,13 @@
 "use client"
 import  { useState } from 'react';
-import {people}  from "./fetch.js";
+import {movie_data}  from "./fetch.js";
 import Header from "./header";
 import Movie_row from "./movie_row";
 import Like_dislike_thumb  from "./like_dislike_thumb";
 
 const App = () => { 
-    const [movies, setData] = useState(people);
-        const handleDelete = (itemId) => {
+    const [movies, setData] = useState(movie_data);
+    const handleDelete = (itemId) => {
             const updatedData = movies.filter(items => items.id !== itemId);
             setData(updatedData);  
         };
@@ -15,8 +15,8 @@ const App = () => {
     const handleLike = (id) => {
         const updatedMovies = movies.map((movie) => {
             if (movie.id === id) {
-                const votes = movie.likes + 1 - movie.dislikes;
-                return { ...movie, likes: movie.likes + 1, votes };
+                const votes = movie.votes + 1 ;
+                return { ...movie, votes: movie.votes + 1, votes };
             }
             return movie;
         });
@@ -29,8 +29,8 @@ const App = () => {
     const handleDislike = (id) => {
         const updatedMovies = movies.map((movie) => {
             if (movie.id === id) {
-                const votes = movie.likes - movie.dislikes - 1;
-                return { ...movie, dislikes: movie.dislikes + 1, votes };
+                const votes = movie.votes - 1;
+                return { ...movie, votes: movie.votes + 1, votes };
             }
             return movie;
         });
@@ -44,13 +44,9 @@ const App = () => {
         <div>
             {movies.map((movie) => 
                 <Movie_row
-                    name1={movie.name}
-                    discription={movie.description}
-                    url={movie.url}
-                    key={movie.id}
+                    movie_data={movie}
                     onDelete={() => handleDelete(movie.id)}
-                    likes={movie.likes}
-                    dislikes={movie.dislikes}
+                    likes={movie.votes}
                     handleLike={() => handleLike(movie.id)}
                     handleDislike={() => handleDislike(movie.id)}
                     
