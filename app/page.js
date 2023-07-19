@@ -1,9 +1,11 @@
 "use client"
+import Add_movie from "./add_movie.js"
 import  { useState } from 'react';
-import {movie_data}  from "./fetch.js";
+import {movie_data}  from "./data.js";
 import Header from "./header";
 import Movie_row from "./movie_row";
 import Like_dislike_thumb  from "./like_dislike_thumb";
+import  Movie_form  from "./movie_form.js";
 
 const App = () => { 
     const [movies, setData] = useState(movie_data);
@@ -39,24 +41,40 @@ const App = () => {
         setData(sortedMovies);
     };
     
+    const handleAddMovie1 = (newMovie) => {
+        const updatedMovies = [...movies];
+        updatedMovies.push(newMovie);
+        
+    setData( updatedMovies);
+    };
     
-    return (
-        <div>
-            {movies.map((movie) => 
-                <Movie_row
-                    movie_data={movie}
-                    onDelete={() => handleDelete(movie.id)}
-                    likes={movie.votes}
-                    handleLike={() => handleLike(movie.id)}
-                    handleDislike={() => handleDislike(movie.id)}
-                    
-                />
-             )}
+     return (
+    <div>
+      {movies.map((movie) => (
+        <div key={movie.id}>
+          <Movie_row
+                  movie_data={movie}
+                  onDelete={() => handleDelete(movie.id)}
+                  handleLike={() => handleLike(movie.id)}
+                  handleDislike={() => handleDislike(movie.id)}
+                  Add_movie_data={movie}
+                  likes={movie.votes}
+                  
+          />
+          
         </div>
-    ); 
+      ))}
+      
+      <Add_movie originalMovie={movies} 
+            handleAddMovie1={handleAddMovie1}
+          />
+    </div>
+  );
 };
 
 export default App;
+
+
 
 
 

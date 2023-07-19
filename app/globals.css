@@ -150,8 +150,208 @@ p {
     width:50px;
     height:50px;
     float:right;
-  
-    
+}
+.addmovie{
+    height:220px;
+    border: solid 2px red;
+    margin-top:20px;
+}
+.text_row1{
+    height:30px;
+    width:1150px;
+    border: solid 2px red;
+    line-height:30px;
+    text-align:right;
+    color: #F3F3F3;
+    font-size: 20px;
+
 }
 
+.text_row2{
+    height:40px;
+    width:600px;
+    border: solid 2px red;
+    font-size: 28px;
+    line-height:40px;
+    text-align:right;
+    color: #F3F3F3;
+    margin-top:100px;
+
+    }
+.movie_form{
+    width: 1400px;
+    height: 1500px;
+    border-radius: 16px;
+    border: solid 2px red;
+    float:right;
+    background: #272734;
+    margin-right:50px;
+}
+
+.title{
+    width: 510px;
+    height: 44px;
+    margin-top: 64px;
+    margin-left: 64px;
+    border: solid 2px red;
+    line-height:44px;
+    color: #F3F3F3;
+    font-size:40px;
+}
+
+.title_name{
+    width: 510px;
+    height: 100px;
+    margin-top: 64px;
+    margin-left: 64px;
+    border: solid 2px red;
+    line-height:44px;
+    color: #F3F3F3;
+    font-size:40px;
+}
+
+.title1{
+    width: 510px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+    color: #F3F3F3;
+    font-size:28px;
+}
+#title{
+    width: 510px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+   
+}
+.years_name{
+    width: 510px;
+    height: 100px;
+    margin-top: 64px;
+    margin-left: 64px;
+    border: solid 2px red;
+    line-height:44px;
+    color: #F3F3F3;
+    font-size:40px;
+}
+
+.years{
+    width: 510px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+    color: #F3F3F3;
+    font-size:28px;
+}
+
+#year{
+    width: 510px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+   
+}
+
+
+.duration{
+    width: 510px;
+    height: 100px;
+    margin-top: 64px;
+    margin-left: 64px;
+    border: solid 2px red;
+    line-height:44px;
+    color: #F3F3F3;
+    font-size:28px;
+}
+
+.times{
+    width: 510px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+    color: #F3F3F3;
+    float:left;
+    font-size:28px;
+   
+}
+
+.hour_min{
+    width: 510px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+    float:left;
+    font-size:28px;
+   
+}
+#hour{
+    height:50px;
+    width:150px;
+    border: solid 2px red;
+    float:left;
+    font-size:28px;
+}
+
+.times3{
+    width: 90px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+    float:left;
+    font-size:28px;
+}
+
+#min{
+    height:50px;
+    width:150px;
+    border: solid 2px red;
+    float:left;
+    margin-left:60px;
+}
+
+.time2{
+    float:right;
+}
+
+.genre{
+    width:300px;
+    height:500px;
+    border: solid 2px red;
+    margin-left: 170px;
+    margin-top:64px;
+ }
+
+.genre_row{
+    width:300px;
+    height:50px;
+    border: solid 2px red;
+    font-size:28px;
+    line-height:50px;
+    color: #F3F3F3;
+  
+}
+
+.select_row{
+    width:300px;
+    height:50px;
+    border: solid 2px red;
+    font-size:20px;
+    line-height:50px;
+    color: #F3F3F3;
+}
+.select_option{
+    width:300px;
+    height:370px;
+    border: solid 2px red;
+    margin-top:30px;
+}
+    
+#director{
+    width: 510px;
+    height: 50px;
+    border: solid 2px red;
+    line-height:50px;
+   
+}
 
