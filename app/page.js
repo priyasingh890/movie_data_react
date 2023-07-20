@@ -64,10 +64,10 @@ const App = () => {
           
         </div>
       ))}
-      
+      <Movie_form/>
       <Add_movie originalMovie={movies} 
             handleAddMovie1={handleAddMovie1}
-          />
+      />
     </div>
   );
 };

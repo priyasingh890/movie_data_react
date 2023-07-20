@@ -4,6 +4,25 @@ const MovieForm = ({ movies,   handleAddMovie1 }) => {
   const [title, setTitle] = useState('');
   const [director, setDirector] = useState('');
   const [year, setYear] = useState('');
+  const [hour, sethour] = useState('');
+  const [min, setmin] = useState('');
+  const [genre, setgenre] = useState('');
+  const [description, setdescription] = useState('');
+  const [selectedImage, setSelectedImage] = useState(null);
+  const handleGenreChange = (e) => {
+    const { value } = e.target;
+    setgenre((prevSelectedGenres) =>
+      prevSelectedGenres.includes(value)
+        ? prevSelectedGenres.filter((genre) => genre !== value)
+        : [...prevSelectedGenres, value]
+    );
+  };
+  
+   const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedImage(file);
+  };
+  
   
 
   const handleAddMovie = () => {
@@ -11,8 +30,15 @@ const MovieForm = ({ movies,   handleAddMovie1 }) => {
     const newMovie = {
       title,
       director,
-      year
-      // Add more properties if needed (genre, duration, etc.)
+      year,
+      hour,
+      min,
+      genre:genre,
+      description ,
+      imageUrl: selectedImage ? URL.createObjectURL(selectedImage) : null,
+      votes: 0,
+      id:0,
+   
     };
 
     // Update the movies state by adding the new movie to the existing movies array
@@ -22,56 +48,214 @@ const MovieForm = ({ movies,   handleAddMovie1 }) => {
     setTitle('');
     setDirector('');
     setYear('');
+    sethour('');
+    setmin('');
+    setgenre([]);
+    setdescription('');
+    setSelectedImage(null);
   };
 
   return (
-    <div>
-      <div className="title">Fill this form to add Movie</div>
-      <div className="title_name">
-         <div className="title1">Name of  Movie</div>
-         <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-         />
-    </div>
-    <div className="title_name">
-         <div className="title1">Director</div>
-         <input
-            type="text"
-            id="director"
-            value={director}
-            onChange={(e) => setDirector(e.target.value)}
-            required
-         />
-    </div>
-    <div className="years_name">
-         <div className="years">Year of Release</div>
-         <input type="number" 
-         id="year" value={year} 
-         onChange={(e) => setYear(e.target.value)} 
-         required />
-        
-      
-      </div>
-    
-    
+    <div className="movie_add">
+        <div className="title">Fill this form to add Movie</div>
+        <div className="title_name">
+            <div className="title1">Name of  Movie</div>
+            <input 
+                type="text"
+                id="title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+            />
+        </div>
+        <div className="title_name">
+            <div className="title1">Director</div>
+            <input
+                type="text"
+                id="director"
+                value={director}
+                onChange={(e) => setDirector(e.target.value)}
+                required
+            />
+        </div>
+        <div className="years_name">
+            <div className="years">Year of Release</div>
+            <select
+                type="number" 
+                id="year" 
+                value={year} 
+                onChange={(e) => setYear(e.target.value)} 
+                required 
+            >
+                <option value="">Select the year</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                {/* Add more years as needed */}
+           </select>
+       </div>
+       <div className="duration">
+            <div className="times">Movie Duration</div>
+                <div className="hour_min">
+                    <select
+                        type="number" 
+                        id="hour" 
+                        value={hour} 
+                        onChange={(e) => sethour(e.target.value)} 
+                        required 
+                    >
+                       <option value="">Select the minutes</option>
+                       <option value="15">15</option>
+                       <option value="30">30</option>
+                       <option value="45">45</option>
+                      
+                    </select>
 
-      <button onClick={handleAddMovie}>Add Movie</button>
+                    <div className="times3">Hour</div>
+                    <select
+                        type="number" 
+                        id="min" 
+                        value={min} 
+                        onChange={(e) => setmin(e.target.value)} 
+                        required 
+                    >
+                       <option value="">Select the minutes</option>
+                       <option value="15">15</option>
+                       <option value="30">30</option>
+                       <option value="45">45</option>
+                  
+                    </select>
+                    <div className="time2">Min</div>
+                   
+            </div>
+        </div>
+        <div className="genre">
+             <div className="genre_row">Movie genre</div>
+            <div className="select_row">Select all that is applicabale</div>
+            <div className="select_option">
+                <div className="genres">
+                      <input
+                        type="checkbox"
+                        value="Action"
+                        checked={genre.includes('Action')}
+                        onChange={handleGenreChange}
+                      />
+                      Action
+                
+                </div>
+                <div className="genres">
+                    <input
+                        type="checkbox"
+                        value="Comedy"
+                        checked={genre.includes('Comedy')}
+                        onChange={handleGenreChange}
+                    />
+                    Comedy
+                
+                </div>
+                <div className="genres">
+                    <input
+                        type="checkbox"
+                        value="Drama"
+                        checked={genre.includes('Drama')}
+                        onChange={handleGenreChange}
+                    />
+                    Drama
+                
+                </div>
+                <div className="genres">
+                    <input
+                        type="checkbox"
+                        value="Biography"
+                        checked={genre.includes('Biography')}
+                        onChange={handleGenreChange}
+                    />
+                    Biography
+              
+                </div>
+                <div className="genres">
+                    <input
+                        type="checkbox"
+                        value="Romantic"
+                        checked={genre.includes('Romantic')}
+                        onChange={handleGenreChange}
+                    />
+                    Romantic
+                
+                </div>
+                <div className="genres">
+                    <input
+                        type="checkbox"
+                        id="select"
+                        value="Adventure"
+                        checked={genre.includes('Adventure')}
+                        onChange={handleGenreChange}
+                    />
+                    Adventure
+                
+                </div>
+                <div className="genres">
+                    <input
+                        type="checkbox"
+                        
+                        id="select"
+                        value="Family"
+                        checked={genre.includes('Family')}
+                        onChange={handleGenreChange}
+                    />
+                   Family
+                
+                </div>
+                <div className="genres">
+                    <input
+                        type="checkbox"
+                        value="Documentary"
+                        checked={genre.includes('Documentary')}
+                        onChange={handleGenreChange}
+                    />
+                   Documentary
+                
+                </div>
+                
+                
+                
+                
+            </div>
+                   
+                
+          
+        </div>
+        <div className="description_row">Description</div> 
+        <div className="description">
+             <input 
+                type="text"
+                id="description"
+                value={description}
+                onChange={(e) => setdescription(e.target.value)}
+                required
+            />  
+        </div>
+        <div className="image_upload">Upload Image Of Movie</div>
+        <div className="image">
+             <input id="image1" type="file" onChange={handleImageChange} />
+        </div>
+    
+   
+      {selectedImage && (
+      
+          <img src={URL.createObjectURL(selectedImage)}  />
+        
+      )}
+      
+        
+    <button   type="text" id="add_option" onClick={handleAddMovie}>Add Movie  +  </button>
     </div>
+       
+     
   );
 };
 
 export default MovieForm;
 
-       
-      
-      
-      
-      
-      
-      
 
 

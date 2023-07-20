@@ -153,39 +153,37 @@ p {
 }
 .addmovie{
     height:220px;
-    border: solid 2px red;
     margin-top:20px;
 }
+
 .text_row1{
     height:30px;
     width:1150px;
-    border: solid 2px red;
     line-height:30px;
     text-align:right;
     color: #F3F3F3;
     font-size: 20px;
-
 }
 
 .text_row2{
     height:40px;
     width:600px;
-    border: solid 2px red;
     font-size: 28px;
     line-height:40px;
     text-align:right;
     color: #F3F3F3;
     margin-top:100px;
+}
 
-    }
-.movie_form{
-    width: 1400px;
-    height: 1500px;
+.movie_add{
+    width: 1200px;
+    height: 2000px;
     border-radius: 16px;
-    border: solid 2px red;
-    float:right;
+    float:left;
     background: #272734;
     margin-right:50px;
+    margin-top:40px;
+    margin-left:320px;
 }
 
 .title{
@@ -193,7 +191,6 @@ p {
     height: 44px;
     margin-top: 64px;
     margin-left: 64px;
-    border: solid 2px red;
     line-height:44px;
     color: #F3F3F3;
     font-size:40px;
@@ -204,7 +201,6 @@ p {
     height: 100px;
     margin-top: 64px;
     margin-left: 64px;
-    border: solid 2px red;
     line-height:44px;
     color: #F3F3F3;
     font-size:40px;
@@ -213,7 +209,6 @@ p {
 .title1{
     width: 510px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
     color: #F3F3F3;
     font-size:28px;
@@ -221,8 +216,8 @@ p {
 #title{
     width: 510px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
+    background-color:#5E5E75;
    
 }
 .years_name{
@@ -230,7 +225,6 @@ p {
     height: 100px;
     margin-top: 64px;
     margin-left: 64px;
-    border: solid 2px red;
     line-height:44px;
     color: #F3F3F3;
     font-size:40px;
@@ -239,7 +233,6 @@ p {
 .years{
     width: 510px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
     color: #F3F3F3;
     font-size:28px;
@@ -248,8 +241,8 @@ p {
 #year{
     width: 510px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
+    background-color:#5E5E75;
    
 }
 
@@ -259,7 +252,6 @@ p {
     height: 100px;
     margin-top: 64px;
     margin-left: 64px;
-    border: solid 2px red;
     line-height:44px;
     color: #F3F3F3;
     font-size:28px;
@@ -268,18 +260,17 @@ p {
 .times{
     width: 510px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
     color: #F3F3F3;
     float:left;
     font-size:28px;
+
    
 }
 
 .hour_min{
     width: 510px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
     float:left;
     font-size:28px;
@@ -288,26 +279,25 @@ p {
 #hour{
     height:50px;
     width:150px;
-    border: solid 2px red;
     float:left;
-    font-size:28px;
+    background-color:#5E5E75;
 }
 
 .times3{
     width: 90px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
     float:left;
     font-size:28px;
+   
 }
 
 #min{
     height:50px;
     width:150px;
-    border: solid 2px red;
     float:left;
     margin-left:60px;
+    background-color:#5E5E75;
 }
 
 .time2{
@@ -317,7 +307,6 @@ p {
 .genre{
     width:300px;
     height:500px;
-    border: solid 2px red;
     margin-left: 170px;
     margin-top:64px;
  }
@@ -325,17 +314,14 @@ p {
 .genre_row{
     width:300px;
     height:50px;
-    border: solid 2px red;
     font-size:28px;
     line-height:50px;
     color: #F3F3F3;
-  
 }
 
 .select_row{
     width:300px;
     height:50px;
-    border: solid 2px red;
     font-size:20px;
     line-height:50px;
     color: #F3F3F3;
@@ -343,15 +329,95 @@ p {
 .select_option{
     width:300px;
     height:370px;
-    border: solid 2px red;
     margin-top:30px;
 }
     
 #director{
     width: 510px;
     height: 50px;
-    border: solid 2px red;
     line-height:50px;
+    background-color:#5E5E75;
    
 }
+.genres{
+    margin-top:20px;
+    color:#F3F3F3;
+    font-size:20px;
+}
+
+.description_row{
+   width:350px;
+   height:50px; 
+   margin-left: 170px;
+   margin-top:64px;
+   color: #F3F3F3;
+   font-size:20px;
+   line-height:50px;
+}
+
+.description{
+   width:600px;
+   height:200px; 
+   margin-left: 170px;
+   background-color:#5E5E75;
+  
+   
+  
+}
+#description{
+   width:600px;
+   height:200px; 
+   background-color:#5E5E75;
+}
+
+.image_upload{
+   width:510px;
+   height:50px; 
+   line-height:50px;
+   color:#F3F3F3;
+   margin-top: 64px;
+   margin-left: 170px;
+   font-size:20px;
+}
+
+#image1{
+   width:100px;
+   height:50px; 
+   line-height:50px;
+   color:#F3F3F3;
+   margin-top: 20px;
+   margin-left: 170px;
+   border-radius:50px;
+   text-align: center;
+   background-color:#5E5E75;
+}
+#add_option{
+   width:300px;
+   height:50px; 
+   line-height:50px;
+   color:#F3F3F3;
+   margin-top: 20px;
+   margin-left: 170px;
+   text-align: center;
+   background-color:#F85146;
+   font-size:28px;
+}
+
+.movie_form{
+    height:50px;
+    margin-left:320px;
+    margin-top:100px;
+    font-size:28px;
+    color:#F3F3F3;
+    line-height:50px;
+}
+
+.form_text{
+    height:50px;
+    margin-left:320px;
+    font-size:20px;
+    color:#F3F3F3;
+    line-height:50px;
+}
+
 

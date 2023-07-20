@@ -7,15 +7,16 @@ const Movie_row = ({ movie_data, onDelete,handleLike, handleDislike, likes,  dis
     return(
         <div className="movie_box">
             
-            <div className="image_row"><img src={movie_data.imageUrl}/></div>
+            <div className="image_row">{movie_data.imageUrl && <img src={movie_data.imageUrl}  />}</div>
             <div className="movie_row">
                 <div className="movie_details_row">
                     <p>{movie_data.title}</p>
                     <h3></h3>
                     <p>{movie_data.director}</p> 
-                    <p>{movie_data.year}/{movie_data.hours}/{movie_data.min}</p> 
+                    <p>{movie_data.year}/{movie_data.hour}/{movie_data.min}</p> 
                     <p>{movie_data.genre}</p>
                     <p>{movie_data.duration}</p>
+                    <p>{movie_data.description}</p>
                            
                 </div>
                 <div className="like_dislike_row">
