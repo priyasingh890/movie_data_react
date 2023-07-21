@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-const MovieForm = ({ movies,   handleAddMovie1 }) => {
+const MovieForm = ({handleAddMovie1 }) => {
   const [title, setTitle] = useState('');
   const [director, setDirector] = useState('');
-  const [year, setYear] = useState('');
+  const [release_date, setrelease_date] = useState('');
   const [hour, sethour] = useState('');
   const [min, setmin] = useState('');
   const [genre, setgenre] = useState('');
   const [description, setdescription] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
+  const [votes, setVotes] = useState(0);
   const handleGenreChange = (e) => {
     const { value } = e.target;
     setgenre((prevSelectedGenres) =>
@@ -27,17 +28,20 @@ const MovieForm = ({ movies,   handleAddMovie1 }) => {
 
   const handleAddMovie = () => {
     // Create a new movie object with the form data
-    const newMovie = {
+    const newMovie = {  
+       
+      id: Date.now(),
       title,
       director,
-      year,
+      release_date,
       hour,
       min,
       genre:genre,
       description ,
       imageUrl: selectedImage ? URL.createObjectURL(selectedImage) : null,
-      votes: 0,
-      id:0,
+      votes
+     
+   
    
     };
 
@@ -47,12 +51,13 @@ const MovieForm = ({ movies,   handleAddMovie1 }) => {
     // Clear the form fields after adding the movie
     setTitle('');
     setDirector('');
-    setYear('');
+    setrelease_date('');
     sethour('');
     setmin('');
     setgenre([]);
     setdescription('');
     setSelectedImage(null);
+    setVotes(0);
   };
 
   return (
@@ -83,8 +88,8 @@ const MovieForm = ({ movies,   handleAddMovie1 }) => {
             <select
                 type="number" 
                 id="year" 
-                value={year} 
-                onChange={(e) => setYear(e.target.value)} 
+                value={release_date} 
+                onChange={(e) =>  setrelease_date(e.target.value)} 
                 required 
             >
                 <option value="">Select the year</option>
@@ -237,7 +242,7 @@ const MovieForm = ({ movies,   handleAddMovie1 }) => {
         </div>
         <div className="image_upload">Upload Image Of Movie</div>
         <div className="image">
-             <input id="image1" type="file" onChange={handleImageChange} />
+             <input type="file"  className="file-input" onChange={handleImageChange} />
         </div>
     
    
