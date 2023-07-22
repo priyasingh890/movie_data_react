@@ -13,8 +13,6 @@ body{
       border: solid 2px red;
 }
 
-
-
 .logoicon{
       height: 72px;
       width: 310px;
@@ -30,10 +28,7 @@ body{
    width: 150px;
    height: 72px;
    color: #F3F3F3;
-  
 }
-
-
 
 .header_inside_row{
    width: 350px;
@@ -120,9 +115,7 @@ img{
     float:left;
 }
 
-
 .circle{
-    border: solid 1px red;
     height:50px;
     width:50px;
     padding:14px;
@@ -132,14 +125,13 @@ img{
     color: #F3F3F3;
     text-align: center;
     background-color:#272734;
-  
 }
+
 .dislikethumb{
     width:60px;
     height:60px;
     float:left;
     margin-left:20px
-
 }
 
 p {

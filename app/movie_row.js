@@ -6,8 +6,6 @@ import Movie_form from "./movie_form.js"
 const Movie_row = ({ movie_data, onDelete,handleLike, handleDislike, likes,  dislikes,  Add_movie_data}) => {
       const posterPath = movie_data.poster_path;
       const imageUrl = posterPath ? `https://image.tmdb.org/t/p/w185${posterPath}` :movie_data.imageUrl;
-
-  
     return(
         <div className="movie_box">
               <div className="image_row">{ imageUrl&& <img src={ imageUrl} />}</div>
@@ -27,13 +25,10 @@ const Movie_row = ({ movie_data, onDelete,handleLike, handleDislike, likes,  dis
                     handleLike={handleLike}
                     handleDislike={handleDislike}
                     likes={likes}
-                   
                 />
              </div>
           </div>
-        
-       
-       </div>
+        </div>
     )
 };
 export default Movie_row;

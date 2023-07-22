@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const MovieForm = ({handleAddMovie1 }) => {
+const MovieForm = ({handleAddMovie_data }) => {
   const [title, setTitle] = useState('');
   const [director, setDirector] = useState('');
   const [release_date, setrelease_date] = useState('');
   const [hour, sethour] = useState('');
   const [min, setmin] = useState('');
   const [genre, setgenre] = useState('');
-  const [description, setdescription] = useState('');
+  const [overview, setoverview] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
   const [votes, setVotes] = useState(0);
   const handleGenreChange = (e) => {
@@ -19,17 +19,13 @@ const MovieForm = ({handleAddMovie1 }) => {
     );
   };
   
-   const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedImage(file);
-  };
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        setSelectedImage(file);
+    };
   
-  
-
   const handleAddMovie = () => {
-    // Create a new movie object with the form data
     const newMovie = {  
-       
       id: Date.now(),
       title,
       director,
@@ -37,25 +33,19 @@ const MovieForm = ({handleAddMovie1 }) => {
       hour,
       min,
       genre:genre,
-      description ,
+      overview ,
       imageUrl: selectedImage ? URL.createObjectURL(selectedImage) : null,
       votes
-     
-   
-   
     };
+    handleAddMovie_data( newMovie);
 
-    // Update the movies state by adding the new movie to the existing movies array
-      handleAddMovie1( newMovie);
-
-    // Clear the form fields after adding the movie
     setTitle('');
     setDirector('');
     setrelease_date('');
     sethour('');
     setmin('');
     setgenre([]);
-    setdescription('');
+    setoverview('');
     setSelectedImage(null);
     setVotes(0);
   };
@@ -221,22 +211,15 @@ const MovieForm = ({handleAddMovie1 }) => {
                    Documentary
                 
                 </div>
-                
-                
-                
-                
-            </div>
-                   
-                
-          
+        </div>
         </div>
         <div className="description_row">Description</div> 
         <div className="description">
              <input 
                 type="text"
                 id="description"
-                value={description}
-                onChange={(e) => setdescription(e.target.value)}
+                value={overview}
+                onChange={(e) => setoverview(e.target.value)}
                 required
             />  
         </div>
@@ -244,15 +227,11 @@ const MovieForm = ({handleAddMovie1 }) => {
         <div className="image">
              <input type="file"  className="file-input" onChange={handleImageChange} />
         </div>
-    
-   
-      {selectedImage && (
+        {selectedImage && (
       
-          <img src={URL.createObjectURL(selectedImage)}  />
+        <img src={URL.createObjectURL(selectedImage)}/>
         
-      )}
-      
-        
+        )}
     <button   type="text" id="add_option" onClick={handleAddMovie}>Add Movie  +  </button>
     </div>
        

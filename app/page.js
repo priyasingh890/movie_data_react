@@ -6,7 +6,6 @@ import Header from "./header";
 import Movie_row from "./movie_row";
 import Like_dislike_thumb  from "./like_dislike_thumb";
 import  Movie_form  from "./movie_form.js";
-
 const App = () => { 
     const [movies, setData] = useState([]);
     useEffect(() => {
@@ -63,7 +62,7 @@ const App = () => {
         setData(sortedMovies);
     };
     
-    const handleAddMovie1 = (newMovie) => {
+    const handleAddMovie_data = (newMovie) => {
         const updatedMovies = [...movies];
         updatedMovies.push(newMovie);
         
@@ -74,7 +73,7 @@ const App = () => {
     <div>
       {movies.map((movie) => (
         <div key={movie.id}>
-          <Movie_row
+        <Movie_row
                   movie_data={movie}
                   onDelete={() => handleDelete(movie.id)}
                   handleLike={() => handleLike(movie.id)}
@@ -83,21 +82,16 @@ const App = () => {
                   likes={movie.votes}
                   hour={movie.hour}
                   min={movie.min}
-                 
-
-                  
-          />
-          
-        </div>
+        />
+     </div>
       ))}
       <Movie_form/>
       <Add_movie originalMovie={movies} 
-            handleAddMovie1={handleAddMovie1}
+            handleAddMovie_data={handleAddMovie_data}
       />
     </div>
   );
 };
-
 export default App;
 
 
